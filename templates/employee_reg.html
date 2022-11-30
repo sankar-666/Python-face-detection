@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/">Login</a>
+    <a href="reg">Register</a>
+    <center>
+        <h1>Register</h1>
+        <form method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th>Name</th>
+                <td><input type="text" name="name" id=""></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="text" name="email" id=""></td>
+            </tr>
+           
+            <tr>
+                <td><input type="submit" name="btn" id=""></td>
+            </tr>
+        </table>
+        </form>
+    </center>
+        {% with messages = get_flashed_messages() %}
+    {% if messages %}
+
+    {% for message in messages %}
+    <script>alert("{{ message }}")</script>
+    {% endfor %}
+
+    {% endif %}
+    {% endwith %} 
+    
+    {% block body %}{% endblock %}
+    
+</body>
+</html>
